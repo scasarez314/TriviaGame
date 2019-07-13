@@ -1,7 +1,7 @@
 #triviaBox {
     background-color: rgb(192, 192, 45);
-    margin: auto 20%;
-    /* text-align: center; */
+    margin: 10px 20%;
+    text-align: center;
     height:400px;
 }
 

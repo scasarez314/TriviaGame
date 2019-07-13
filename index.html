@@ -1,10 +1,12 @@
 <html>
     <head>
         <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
     </head>
 
     <body>
@@ -18,83 +20,90 @@
 
                 <h1>Totally Trivial Trivia</h1>
 
-                <button id="showTriviaButton">Toggle Trivia!</button>
+                <button id="showTriviaButton">Start Trivia!</button>
 
 
                 <div id="timeCounter">
-                    <h2>Time Remaining: 30 seconds.</h2>
+                    <h2>Time Remaining: <span id="yellow">10</span> seconds.</h2>
                 </div>
 
                 <div id="triviaQuestions">
 
-                    <p id="questionOne">What is the third planet from the Sun?</p>
+                    <p id="questionOne">1. What is the third planet from the
+                        Sun?</p>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio"
-                            name="inlineRadioOptions" id="inlineRadio1"
-                            value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Jupiter</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio"
-                            name="inlineRadioOptions" id="inlineRadio2"
-                            value="option2">
-                        <label class="form-check-label" for="inlineRadio2">Earth</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio"
-                            name="inlineRadioOptions" id="inlineRadio3"
-                            value="option3">
-                        <label class="form-check-label" for="inlineRadio3">Pluto</label>
+                            name="questionOne" id="Jupiter"
+                            value="incorrect">
+                        <label class="form-check-label" for="Jupiter">Jupiter</label>
                     </div>
 
-
-                    <p id="questionTwo">Whats the Capital of Texas?</p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio"
+                            name="questionOne" id="Earth"
+                            value="correct">
+                        <label class="form-check-label" for="Earth">Earth</label>
+                    </div>
 
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio"
-                            name="inlineRadioOptions" id="inlineRadio1"
-                            value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Austin</label>
+                            name="questionOne" id="Pluto"
+                            value="incorrect">
+                        <label class="form-check-label" for="Pluto">Pluto</label>
+                    </div>
+
+
+                    <p id="questionTwo">2. Whats the Capital of Texas?</p>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio"
+                            name="questionTwo" id="Austin"
+                            value="correct">
+                        <label class="form-check-label" for="Austin">Austin</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio"
-                            name="inlineRadioOptions" id="inlineRadio2"
-                            value="option2">
-                        <label class="form-check-label" for="inlineRadio2">San
+                            name="questionTwo" id="SanAntonio"
+                            value="incorrect">
+                        <label class="form-check-label" for="SanAntonio">San
                             Antonio</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio"
-                            name="inlineRadioOptions" id="inlineRadio3"
-                            value="option3">
-                        <label class="form-check-label" for="inlineRadio3">Waco</label>
+                            name="questionTwo" id="Waco"
+                            value="incorrect">
+                        <label class="form-check-label" for="Waco">Waco</label>
                     </div>
 
 
-                    <p id="questionThree">How many moons does Earth have?</p>
+                    <p id="questionThree">3. How many moons does Earth have?</p>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio"
-                            name="inlineRadioOptions" id="inlineRadio1"
-                            value="option1">
-                        <label class="form-check-label" for="inlineRadio1">1</label>
+                            name="questionThree" id="1"
+                            value="correct">
+                        <label class="form-check-label" for="1">1</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio"
-                            name="inlineRadioOptions" id="inlineRadio2"
-                            value="option2">
-                        <label class="form-check-label" for="inlineRadio2">2</label>
+                            name="questionThree" id="2"
+                            value="incorrect">
+                        <label class="form-check-label" for="2">2</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio"
-                            name="inlineRadioOptions" id="inlineRadio3"
-                            value="option3">
-                        <label class="form-check-label" for="inlineRadio3">3</label>
+                            name="questionThree" id="3"
+                            value="incorrect">
+                        <label class="form-check-label" for="3">3</label>
                     </div>
 
                 </div>
 
-                <input name="Done" type="submit" value="Done" />
-
+                <button id="done" name="Done" type="submit" value="Done">Done</button>
+                <div id="questionResults">
+                    <p id="correct">Correct: <span id="numCorrect"></span></p>
+                    <p id="wrong">Wrong: <span id="numWrong"></span></p>
+                    <p id="unAnswered">Unanswered: <span id="numunAnswered"></span></p>
+                </div>
             </div>
 
         </div>
