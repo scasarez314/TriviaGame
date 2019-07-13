@@ -71,6 +71,7 @@ var numWrong = 0;
 var numUnanswered = 0;
 
 $("#done").on("click", function () {
+    stopTimer();
     resultWindow();
     actualTriviaQuestions();
 
